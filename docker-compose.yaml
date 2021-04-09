@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  calibre-rmapi:
+    build: .
+    environment:
+      - TARGET_FOLDER=books2
+    volumes:
+      - /tmp/test/Calibre Library:/data
+      - /home/alex/.config/rmapi:/root/.config/rmapi:ro
