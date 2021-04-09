@@ -1,7 +1,7 @@
 FROM golang:alpine AS build
 RUN apk add --no-cache git
-RUN go get -u github.com/juruen/rmapi
-RUN go install github.com/juruen/rmapi
+ENV GO111MODULE=on
+RUN go install github.com/juruen/rmapi@latest
 
 FROM alpine
 RUN apk update && apk add inotify-tools bash
